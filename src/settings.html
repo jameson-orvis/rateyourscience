@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<?php
+
+require_once('userpage.php');
+
+
+    echo ' <style>
+		.helvet {
+			font-family: "Helvetica", sans-serif !important
+		} 
+        .georg {
+			font-family: "Georgia" !important
+		} 
+        .papyr {
+            font-family: "Papyrus" !important
+        }
+        </style>
+        ';
+    
+    echo '<form method="post" action="" id="fontForm">
+        <input type="radio" id="Helvetica" name="font" value="Helvetica">
+        <label for="Helvetica" class="helvet">Helvetica</label> </p><br> 
+        <input type="radio" id="Georgia" name="font" value="Georgia">
+        <label for="Georgia" class="georg">Georgia</label><br>
+        <input type="radio" id="Papyrus" name="font" value="Papyrus">
+        <label for="Papyrus" class"papyr">Papyrus</label><br>
+    </form>
+    ';
+
+</p>
+
+</html>
+
+
+

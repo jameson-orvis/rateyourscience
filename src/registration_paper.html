@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    * {
+        font-family: 'Helvetica', sans-serif;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <!-- Google reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeFNrMqAAAAAIp6oL9MYk5Paf0Vz18D58gHHoZy"></script>
+
+    <script>
+        // This function will be called when the form is submitted
+        function onSubmit(token) {
+            document.getElementById("recaptcha-token").value = token;
+            document.getElementById("registration-form").submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Create User Account</h1>
+
+    <form id="registration-form" action="register.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <!-- Hidden field to store the reCAPTCHA token -->
+        <input type="hidden" id="recaptcha-token" name="recaptcha-token">
+
+        <button type="button" onclick="grecaptcha.execute('6LeFNrMqAAAAAIp6oL9MYk5Paf0Vz18D58gHHoZy', {action: 'submit'}).then(onSubmit);">Register</button>
+    </form>
+</body>
+</html>
+
